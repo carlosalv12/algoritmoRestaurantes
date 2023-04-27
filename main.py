@@ -21,10 +21,10 @@ distances, indices = knn.kneighbors(ratings, n_neighbors=1827)
 def ejecutarInsercion(matrizDistancias, matrizIndices):
     for fila in range(len(matrizIndices)):
         for columna in range(len(matrizIndices[0])):
-            indiceReal1 = df_restaurants.loc[fila][0]
-            indiceReal2 = df_restaurants.loc[matrizIndices[fila][columna]][0]
-            indiceReal1 = indiceReal1["$oid"]
-            indiceReal2 = indiceReal2["$oid"]
+            indiceReal1 = df_restaurants[fila]['oid']
+            indiceReal2 = df_restaurants[matrizIndices[fila][columna]]['oid']
+            #indiceReal1 = indiceReal1["$oid"]
+            #indiceReal2 = indiceReal2["$oid"]
             aux = matrizDistancias[fila][columna]
             print(indiceReal1)
             print(indiceReal2)
